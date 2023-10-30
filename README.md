@@ -1,8 +1,13 @@
 Licencija: CC0 (Besplatno korištenje za bilo koga u bilo koju svrhu bez ikakvih ograničenja ili zahtjeva)
+
 Autor: Zvonimir Mabić
+
 Verzija podataka: 1.0
+
 Jezik podataka: engleski
-Opis atributa: 
+
+Opis atributa:
+
   - fighterName - ime i prezime borca
   - alias - nadimak borca
   - country
