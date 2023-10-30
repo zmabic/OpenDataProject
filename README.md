@@ -11,7 +11,7 @@ Opis atributa:
   - fighterName - ime i prezime borca
   - alias - nadimak borca
   - country
-  - weightklass
+  - weightclass
   - strikingAccuracyPercentage - postotak uspješnih udaraca
   - takedownAccuracyPercentage - postotak uspješnih obaranja
   - takedownDefensePercentage - postotak izbjegnutih obaranja
