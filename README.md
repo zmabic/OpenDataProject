@@ -20,3 +20,4 @@ Opis atributa:
   - winsBySubmission - broj pobjeda gdje je protivnik morao predati
   - losses
   - active - boolean - je li borac još aktivan
+  - trainers - popis svih trenera od kojih svaki ima ime i prezime
