@@ -2,22 +2,25 @@ Licencija: CC0 (Besplatno korištenje za bilo koga u bilo koju svrhu bez ikakvih
 
 Autor: Zvonimir Mabić
 
-Verzija podataka: 1.0
+Verzija podataka: 1.1
 
 Jezik podataka: engleski
 
-Opis atributa:
+Kratki opis podataka
 
-  - fighterName - ime i prezime borca
-  - alias - nadimak borca
-  - country
-  - weightclass
-  - strikingAccuracyPercentage - postotak uspješnih udaraca
-  - takedownAccuracyPercentage - postotak uspješnih obaranja
-  - takedownDefensePercentage - postotak izbjegnutih obaranja
-  - wins
-  - winsByKO - broj pobjeda sa čistim KO
-  - winsBySubmission - broj pobjeda gdje je protivnik morao predati
-  - losses
-  - active - boolean - je li borac još aktivan
-  - trainers - popis svih trenera od kojih svaki ima ime i prezime
+Table NFLteam oznacava opcenite podatke o pojeninom timu: ime, grad, konferencija itd., tu kao primarni ključ imamo id. Imamo i table NFL NFLteamSeason koji označava rezultate pojedinog tima u određenoj sezoni. Njega identificiraju sezona i teamID. Tu za svaki tim u sezoni su zapisani broj dobivenih i izgubljenih utakmica, broj bodova protiv drugih timova i protiv njih, razlika izmedu tih brojeva, trener te sezone, sami broj sezone. Table NFLplayer oznacava igraca koji je identificiran sa atributom id. Svaki igrac ima ime i prezime. Sve to povezuje table player_season koji spaja pojedinog igraca sa njegovim klubom u odredenoj sezoni. 
+
+Opis atributa:
+- id - primarni ključ svakog retka
+- name - ime NFL kluba
+- city 
+- conference
+- division - unutar svake konferencije postoje 4
+- gamesWon - broj dobivenih partija te sezone
+- gamesLost
+- pointsScoredByTeam
+- pointsScoredByOpposition
+- pointsDifferential
+- coach - trener te sezone
+- season
+- players - svaki ima ime i prezime, svaki klub ima vise igraca
