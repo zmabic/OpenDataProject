@@ -2,7 +2,7 @@ Licencija: CC0 (Besplatno korištenje za bilo koga u bilo koju svrhu bez ikakvih
 
 Autor: Zvonimir Mabić
 
-Verzija podataka: 1.1
+Verzija podataka: 2.0
 
 Jezik podataka: engleski
 
