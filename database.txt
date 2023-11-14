@@ -1,39 +1,35 @@
-CREATE DATABASE NFLdb;
-
-USE NFLdb;
-
 CREATE TABLE NFLteam (
-	id INT IDENTITY(1, 1) PRIMARY KEY,
-	name VARCHAR(255),
-	city VARCHAR(255),
-	conference VARCHAR(10),
-	division VARCHAR(50),
+    id SERIAL PRIMARY KEY,
+    name VARCHAR,
+    city VARCHAR,
+    conference VARCHAR(10),
+    division VARCHAR(50)
 );
 
 CREATE TABLE NFLplayer (
-	id INT IDENTITY(1, 1) PRIMARY KEY,
-	firstName VARCHAR(255),
-	lastName VARCHAR(255)
+    id SERIAL PRIMARY KEY,
+    firstName VARCHAR,
+    lastName VARCHAR
 );
 
 CREATE TABLE NFLteamSeason (
-	teamID INT,
-	gamesWon INT,
-	gamesLost INT,
-	pointsScoredByTeam INT,
-	pointsScoredByOpposition INT,
-	pointsDifferential INT,
-	coach VARCHAR(255),
-	season INT,
-	PRIMARY KEY (teamID, season),
-	FOREIGN KEY (teamID) REFERENCES NFLteam (id)
+    teamID INT,
+    gamesWon INT,
+    gamesLost INT,
+    pointsScoredByTeam INT,
+    pointsScoredByOpposition INT,
+    pointsDifferential INT,
+    coach VARCHAR,
+    season INT,
+    PRIMARY KEY (teamID, season),
+    FOREIGN KEY (teamID) REFERENCES NFLteam (id)
 );
 
 CREATE TABLE player_season (
-	team_id INT,
-	player_id INT,
-	season INT,
-	FOREIGN KEY (player_id) REFERENCES NFLplayer (id),
+    team_id INT,
+    player_id INT,
+    season INT,
+    FOREIGN KEY (player_id) REFERENCES NFLplayer (id),
     FOREIGN KEY (team_id, season) REFERENCES NFLteamSeason (teamID, season)
 );
 
@@ -113,35 +109,4 @@ VALUES
 	(7, 20, 2020),
 	(7, 21, 2020),
 	(8, 22, 2017);
-
-
-SELECT 'team_id', 'name', 'city', 'conference', 'division', 'gamesWon', 'gamesLost', 'pointsScoredByTeam', 'pointsScoredByOpposition', 'pointsDifferential', 'coach', 'season', 'firstName', 'lastName'
-UNION ALL 
-SELECT CAST(t.id AS VARCHAR(10)) AS team_id, t.name, t.city, t.conference, t.division, 
-		CAST(gamesWon AS VARCHAR(10)) AS gamesWon, CAST(gamesLost AS VARCHAR(10)) AS gamesLost, 
-			CAST(pointsScoredByTeam AS VARCHAR(10)) AS pointsScoredByTeam, CAST(pointsScoredByOpposition AS VARCHAR(10)) AS pointsScoredByOpposition, 
-				CAST(pointsDifferential AS VARCHAR(10)) AS pointsDifferential, coach, CAST(s.season AS VARCHAR(10)) AS season,
-					firstName, lastName
-FROM 
-	NFLteamSeason as s
-INNER JOIN 
-	player_season AS ps ON (ps.team_id = s.teamID AND ps.season = s.season)
-INNER JOIN 
-	NFLplayer AS p ON ps.player_id = p.id
-INNER JOIN
-	NFLteam AS t ON ps.team_id = t.id
-
-
-SELECT t.id, name, city, conference, division, gamesWon, gamesLost, 
-		pointsScoredByTeam, pointsScoredByOpposition, pointsDifferential, coach, season, 
-		(
-			SELECT firstName, lastName
-				FROM player_season as ps 
-					JOIN NFLplayer AS p ON ps.player_id = p.id
-					WHERE  (ps.team_id = t.id AND ps.season = s.season)
-				FOR JSON PATH
-		) as 'players'
-FROM NFLteamSeason as s
-JOIN NFLteam AS t ON s.teamID = t.id
-FOR JSON PATH, root('NFLteamsSeasons'),
-INCLUDE_NULL_VALUES
+	
