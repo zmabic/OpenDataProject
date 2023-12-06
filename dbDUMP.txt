@@ -1,0 +1,112 @@
+CREATE TABLE NFLteam (
+    team_id SERIAL PRIMARY KEY,
+    teamName VARCHAR,
+    city VARCHAR,
+    conference VARCHAR(10),
+    division VARCHAR(50)
+);
+
+CREATE TABLE NFLplayer (
+    player_id SERIAL PRIMARY KEY,
+    firstName VARCHAR,
+    lastName VARCHAR
+);
+
+CREATE TABLE NFLteamSeason (
+    teamID INT,
+    gamesWon INT,
+    gamesLost INT,
+    pointsScoredByTeam INT,
+    pointsScoredByOpposition INT,
+    pointsDifferential INT,
+    coach VARCHAR,
+    season INT,
+    PRIMARY KEY (teamID, season),
+    FOREIGN KEY (teamID) REFERENCES NFLteam (id)
+);
+
+CREATE TABLE player_season (
+    team_id INT,
+    player_id INT,
+    season INT,
+    FOREIGN KEY (player_id) REFERENCES NFLplayer (id),
+    FOREIGN KEY (team_id, season) REFERENCES NFLteamSeason (teamID, season)
+);
+
+INSERT INTO NFLteam(name, city, conference, division)
+VALUES
+    ('Buffalo Bills', 'Buffalo', 'AFC', 'AFC East'), -- done
+    ('Houston Texans', 'Houston', 'AFC', 'AFC South'), --done
+    ('Philadelphia Eagles', 'Philadelphia', 'NFC', 'NFC East'), --done
+    ('Detroit Lions', 'Detroit', 'NFC', 'NFC North'), -- done
+    ('Carolina Panthers', 'Carolina', 'NFC', 'NFC South'), --done
+    ('Los Angeles Rams', 'Los Angeles', 'NFC', 'NFC West'), --done
+    ('New Orleans Saints', 'New Orleans', 'NFC', 'NFC South'), --done
+    ('Denver Broncos', 'Denver', 'AFC', 'AFC West'), --done
+    ('Tennessee Titans', 'Tennessee', 'AFC', 'AFC South'), --done
+    ('Miami Dolphins', 'Miami', 'AFC', 'AFC East'); --done
+
+
+INSERT INTO NFLteamSeason (teamID, gamesWon, gamesLost, pointsScoredByTeam, pointsScoredByOpposition, pointsDifferential, coach, season) 
+VALUES
+	(1, 11, 6, 483, 289, 194, 'Sean McDermott', 2021),
+	(2, 11, 5, 402, 316, 86, 'Bill O Brien', 2018),
+	(3, 9, 7, 385, 354, 31, 'Doug Pederson', 2019),
+	(4, 9, 8, 453, 427, 26, 'Dan Campbell', 2022),
+	(5, 11, 5, 363, 327, 36, 'Ron Rivera', 2017),
+	(6, 5, 12, 307, 384, -77, 'Sean McVay', 2022),
+	(7, 12, 4, 482, 337, 145, 'Sean Payton', 2020),
+	(8, 5, 11, 289, 382, -93, 'Vance Joseph', 2017),
+	(9, 9, 7, 381, 378, 3, 'Mike Mularkey', 2016),
+	(10, 10, 6, 404, 338, 66, 'Brian Flores', 2020);
+
+INSERT INTO NFLplayer (firstName, lastName)
+VALUES
+	('Marcus', 'Mariota'),
+	('Demarco', 'Murray'),
+	('Derrick', 'Henry'),
+	('Myles', 'Gaskin'),
+	('Salvon', 'Ahmed'),
+	('Matt', 'Breida'),
+	('Josh', 'Allen'),
+	('Cole', 'Beasley'),
+	('Deshaun', 'Watson'),
+	('DeAndre', 'Hopkins'), --10
+	('Carson', 'Wentz'),
+	('Jake', 'Elliot'),
+	('Jared', 'Goff'),
+	('Jack', 'Fox'),
+	('Nate', 'Sudfeld'), --15
+	('Cam', 'Newton'),
+	('Matthew', 'Stafford'),
+	('Baker', 'Mayfield'),
+	('Drew', 'Brees'),
+	('Taysom', 'Hill'), --20
+	('Jameis', 'Winston'),
+	('Paxton', 'Lynch');
+
+INSERT INTO player_season (team_id, player_id, season)
+VALUES
+	(9, 1, 2016),
+	(9, 2, 2016),
+	(9, 3, 2016),
+	(10, 4, 2020),
+	(10, 5, 2020),
+	(10, 6, 2020),
+	(1, 7, 2021),
+	(1, 8, 2021),
+	(2, 9, 2018),
+	(2, 10, 2018),
+	(3, 11, 2019),
+	(3, 12, 2019),
+	(4, 13, 2022),
+	(4, 14, 2022),
+	(4, 15, 2022),
+	(5, 16, 2017),
+	(6, 17, 2022),
+	(6, 18, 2022),
+	(7, 19, 2020),
+	(7, 20, 2020),
+	(7, 21, 2020),
+	(8, 22, 2017);
+	
