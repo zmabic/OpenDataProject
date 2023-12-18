@@ -8,8 +8,8 @@ CREATE TABLE NFLteam (
 
 CREATE TABLE NFLplayer (
     player_id SERIAL PRIMARY KEY,
-    firstName VARCHAR,
-    lastName VARCHAR
+    playerfirstName VARCHAR,
+    playerlastName VARCHAR
 );
 
 CREATE TABLE NFLteamSeason (
