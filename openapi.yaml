@@ -1,0 +1,217 @@
+openapi: 3.0.3
+info:
+  title: NFL API
+  version: 1.0.0
+
+paths:
+  /api/teams:
+    get:
+      summary: Get all NFL teams
+      description: Retrieve a list of all NFL teams.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+
+    post:
+      summary: Create a new NFL team
+      description: Create a new NFL team with the provided details.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              teamName: "New Team Name"
+              city: "New City"
+              conference: "AFC"
+              division: "AFC North"
+      responses:
+        '201':
+          description: Team created successfully
+          content:
+            application/json: {}
+        '400':
+          description: All fields are required
+          content:
+            application/json: {}
+
+  '/api/teams/{id}':
+    get:
+      summary: Get a specific NFL team by ID
+      description: Retrieve details of a specific NFL team identified by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Team ID
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+        '400':
+          description: Invalid id
+          content:
+            application/json: {}
+
+    put:
+      summary: Update a specific NFL team by ID
+      description: Update details of a specific NFL team identified by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Team ID
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              teamName: "Updated Team Name"
+              city: "Updated City"
+              conference: "AFC"
+              division: "North"
+      responses:
+        '200':
+          description: Team updated successfully
+          content:
+            application/json: {}
+        '400':
+          description: All fields are required
+          content:
+            application/json: {}
+        '404':
+          description: Team not found
+          content:
+            application/json: {}
+
+    delete:
+      summary: Delete a specific NFL team by ID
+      description: Delete a specific NFL team identified by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Team ID
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Team deleted successfully
+          content:
+            application/json: {}
+        '404':
+          description: Team not found
+          content:
+            application/json: {}
+
+  '/api/teams/{id}/seasons':
+    get:
+      summary: Get team stats
+      description: Get specific stats of a team for all seasons
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Team ID
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json: {}
+        '400':
+          description: Invalid input
+          content:
+            application/json: {}
+
+  '/api/teams/{id}/players':
+    get:
+      summary: Get team players
+      description: Get players for a team with specified id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Team ID
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json: {}
+        '400':
+          description: Invalid id
+          content:
+            application/json: {}
+
+  '/api/teams/{id}/players/{player_id}/seasons/{season}':
+    get:
+      summary: Get a player of a team
+      description: Get a player that played for the specified team on the specified season
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Team ID
+          schema:
+            type: integer
+        - name: player_id
+          in: path
+          required: true
+          description: Player ID
+          schema:
+            type: integer
+        - name: season
+          in: path
+          required: true
+          description: Season
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json: {}
+        '400':
+          description: Bad request
+          content:
+            application/json: {}
+
+  '/api/players':
+    get:
+      summary: Get players info
+      description: Get firstname and lastname for all players
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json: {}
+
+  '/api/players/{id}':
+    get:
+      summary: Get players info
+      description: Get firstname and lastname for a specific player
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Player ID
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json: {}
+        '400':
+          description: Bad request
+          content:
+            application/json: {}

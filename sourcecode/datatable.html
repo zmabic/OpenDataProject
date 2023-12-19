@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search options</title>
+    <script src="frontend2.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2 class="dvid">Search options</h2>
+    <form id="form" class="forma">
+        <div class="dvid">
+            <label for="attribute" class="label">Pick attributes to search from: </label>
+            <select id="attribute" name="attribute" size="1" class="select">
+                <option value="wildcard">Wildcard</option>
+                <option value="t.team_id">Team id</option>
+                <option value="teamName">Team name</option>
+                <option value="city">City</option>
+                <option value="p.player_id">Player Id</option>
+                <option value="p.playerFirstName">Player name</option>
+                <option value="p.playerLastName">Player family name</option>
+                <option value="conference">Conference</option>
+                <option value="division">Division</option>
+                <option value="gamesWon">Games won</option>
+                <option value="gamesLost">Games lost</option>
+                <option value="pointsScoredByTeam">Points scored by team</option>
+                <option value="pointsScoredByOpposition">Points scored by opposition</option>
+                <option value="pointsDifferential">Points Differential</option>
+                <option value="coach">Coach</option>
+                <option value="s.season">Season</option>
+            </select>
+        </div>
+        <div class="dvid">
+            <label for="text" class="label">Enter keyword: </label>
+            <input type="text" id="text" name="text" class="keyword">
+        </div>
+        <button type="submit" class="search-button">Search</button>
+    </form>
+
+    <table id="tablica">
+    </table>
+
+    <div class="dvid">
+        <a href="result1.csv" id="link2" hidden>CSV Result</a>
+        <a href="result.json" id="link1" hidden>JSON Result</a>
+        <a href="schema.json" id="link3" hidden>JSON Schema</a>
+    </div>
+</body>
+
+</html>

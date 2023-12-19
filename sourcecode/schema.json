@@ -1,0 +1,1305 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://or.fer.unizg.hr/nflteamsseasons.json",
+    "type": "object",
+    "default": {},
+    "title": "OR NFLteamsSeasons",
+    "description": "List of NFL teams that contains the stats, players and coach for a specific season",
+    "required": [
+        "NFLteamsSeasons"
+    ],
+    "properties": {
+        "NFLteamsSeasons": {
+            "type": "array",
+            "default": [],
+            "title": "The NFLteamsSeasons Schema",
+            "items": {
+                "type": "object",
+                "title": "One team one season",
+                "required": [
+                    "city",
+                    "coach",
+                    "season",
+                    "players",
+                    "team_id",
+                    "division",
+                    "gameswon",
+                    "teamname",
+                    "gameslost",
+                    "conference",
+                    "pointsdifferential",
+                    "pointsscoredbyteam",
+                    "pointsscoredbyopposition"
+                ],
+                "properties": {
+                    "city": {
+                        "type": "string",
+                        "title": "The city Schema",
+                        "description": "City that a team plays in",
+                        "examples": [
+                            "Los Angeles",
+                            "Detroit",
+                            "Houston",
+                            "Denver",
+                            "Philadelphia",
+                            "Carolina",
+                            "Tennessee",
+                            "Miami",
+                            "Buffalo",
+                            "New Orleans"
+                        ]
+                    },
+                    "coach": {
+                        "type": "string",
+                        "title": "The coach Schema",
+                        "description": "First name and last name of the coach for that season",
+                        "examples": [
+                            "Sean McVay",
+                            "Dan Campbell",
+                            "Bill O Brien",
+                            "Vance Joseph",
+                            "Doug Pederson",
+                            "Ron Rivera",
+                            "Mike Mularkey",
+                            "Brian Flores",
+                            "Sean McDermott",
+                            "Sean Payton"
+                        ]
+                    },
+                    "season": {
+                        "type": "integer",
+                        "title": "The season Schema",
+                        "description": "Year specific season has started",
+                        "examples": [
+                            2022,
+                            2018,
+                            2017,
+                            2019,
+                            2016,
+                            2020,
+                            2021
+                        ]
+                    },
+                    "players": {
+                        "type": "array",
+                        "title": "The players Schema",
+                        "items": {
+                            "type": "object",
+                            "title": "A Schema",
+                            "required": [
+                                "player_id",
+                                "playerlastname",
+                                "playerfirstname"
+                            ],
+                            "properties": {
+                                "player_id": {
+                                    "type": "integer",
+                                    "title": "The player_id Schema",
+                                    "description": "Unique identifying number that represents one player",
+                                    "examples": [
+                                        17,
+                                        18,
+                                        13,
+                                        14,
+                                        15,
+                                        9,
+                                        10,
+                                        22,
+                                        11,
+                                        12,
+                                        16,
+                                        1,
+                                        2,
+                                        3,
+                                        4,
+                                        5,
+                                        6,
+                                        7,
+                                        8,
+                                        19,
+                                        20,
+                                        21
+                                    ]
+                                },
+                                "playerlastname": {
+                                    "type": "string",
+                                    "title": "The playerlastname Schema",
+                                    "description": "Last name of the player",
+                                    "examples": [
+                                        "Stafford",
+                                        "Mayfield",
+                                        "Goff",
+                                        "Fox",
+                                        "Sudfeld",
+                                        "Watson",
+                                        "Hopkins",
+                                        "Lynch",
+                                        "Wentz",
+                                        "Elliot",
+                                        "Newton",
+                                        "Mariota",
+                                        "Murray",
+                                        "Henry",
+                                        "Gaskin",
+                                        "Ahmed",
+                                        "Breida",
+                                        "Allen",
+                                        "Beasley",
+                                        "Brees",
+                                        "Hill",
+                                        "Winston"
+                                    ]
+                                },
+                                "playerfirstname": {
+                                    "type": "string",
+                                    "title": "The playerfirstname Schema",
+                                    "description": "First name of the player",
+                                    "examples": [
+                                        "Matthew",
+                                        "Baker",
+                                        "Jared",
+                                        "Jack",
+                                        "Nate",
+                                        "Deshaun",
+                                        "DeAndre",
+                                        "Paxton",
+                                        "Carson",
+                                        "Jake",
+                                        "Cam",
+                                        "Marcus",
+                                        "Demarco",
+                                        "Derrick",
+                                        "Myles",
+                                        "Salvon",
+                                        "Matt",
+                                        "Josh",
+                                        "Cole",
+                                        "Drew",
+                                        "Taysom",
+                                        "Jameis"
+                                    ]
+                                }
+                            },
+                            "examples": [{
+                                "player_id": 17,
+                                "playerlastname": "Stafford",
+                                "playerfirstname": "Matthew"
+                            },
+                            {
+                                "player_id": 18,
+                                "playerlastname": "Mayfield",
+                                "playerfirstname": "Baker"
+                            },
+                            {
+                                "player_id": 13,
+                                "playerlastname": "Goff",
+                                "playerfirstname": "Jared"
+                            },
+                            {
+                                "player_id": 14,
+                                "playerlastname": "Fox",
+                                "playerfirstname": "Jack"
+                            },
+                            {
+                                "player_id": 15,
+                                "playerlastname": "Sudfeld",
+                                "playerfirstname": "Nate"
+                            },
+                            {
+                                "player_id": 9,
+                                "playerlastname": "Watson",
+                                "playerfirstname": "Deshaun"
+                            },
+                            {
+                                "player_id": 10,
+                                "playerlastname": "Hopkins",
+                                "playerfirstname": "DeAndre"
+                            },
+                            {
+                                "player_id": 22,
+                                "playerlastname": "Lynch",
+                                "playerfirstname": "Paxton"
+                            },
+                            {
+                                "player_id": 11,
+                                "playerlastname": "Wentz",
+                                "playerfirstname": "Carson"
+                            },
+                            {
+                                "player_id": 12,
+                                "playerlastname": "Elliot",
+                                "playerfirstname": "Jake"
+                            },
+                            {
+                                "player_id": 16,
+                                "playerlastname": "Newton",
+                                "playerfirstname": "Cam"
+                            },
+                            {
+                                "player_id": 1,
+                                "playerlastname": "Mariota",
+                                "playerfirstname": "Marcus"
+                            },
+                            {
+                                "player_id": 2,
+                                "playerlastname": "Murray",
+                                "playerfirstname": "Demarco"
+                            },
+                            {
+                                "player_id": 3,
+                                "playerlastname": "Henry",
+                                "playerfirstname": "Derrick"
+                            },
+                            {
+                                "player_id": 4,
+                                "playerlastname": "Gaskin",
+                                "playerfirstname": "Myles"
+                            },
+                            {
+                                "player_id": 5,
+                                "playerlastname": "Ahmed",
+                                "playerfirstname": "Salvon"
+                            },
+                            {
+                                "player_id": 6,
+                                "playerlastname": "Breida",
+                                "playerfirstname": "Matt"
+                            },
+                            {
+                                "player_id": 7,
+                                "playerlastname": "Allen",
+                                "playerfirstname": "Josh"
+                            },
+                            {
+                                "player_id": 8,
+                                "playerlastname": "Beasley",
+                                "playerfirstname": "Cole"
+                            },
+                            {
+                                "player_id": 19,
+                                "playerlastname": "Brees",
+                                "playerfirstname": "Drew"
+                            },
+                            {
+                                "player_id": 20,
+                                "playerlastname": "Hill",
+                                "playerfirstname": "Taysom"
+                            },
+                            {
+                                "player_id": 21,
+                                "playerlastname": "Winston",
+                                "playerfirstname": "Jameis"
+                            }]
+                        },
+                        "examples": [
+                            [{
+                                "player_id": 17,
+                                "playerlastname": "Stafford",
+                                "playerfirstname": "Matthew"
+                            },
+                            {
+                                "player_id": 18,
+                                "playerlastname": "Mayfield",
+                                "playerfirstname": "Baker"
+                            }],
+                            [{
+                                "player_id": 13,
+                                "playerlastname": "Goff",
+                                "playerfirstname": "Jared"
+                            },
+                            {
+                                "player_id": 14,
+                                "playerlastname": "Fox",
+                                "playerfirstname": "Jack"
+                            },
+                            {
+                                "player_id": 15,
+                                "playerlastname": "Sudfeld",
+                                "playerfirstname": "Nate"
+                            }],
+                            [{
+                                "player_id": 9,
+                                "playerlastname": "Watson",
+                                "playerfirstname": "Deshaun"
+                            },
+                            {
+                                "player_id": 10,
+                                "playerlastname": "Hopkins",
+                                "playerfirstname": "DeAndre"
+                            }],
+                            [{
+                                "player_id": 22,
+                                "playerlastname": "Lynch",
+                                "playerfirstname": "Paxton"
+                            }],
+                            [{
+                                "player_id": 11,
+                                "playerlastname": "Wentz",
+                                "playerfirstname": "Carson"
+                            },
+                            {
+                                "player_id": 12,
+                                "playerlastname": "Elliot",
+                                "playerfirstname": "Jake"
+                            }],
+                            [{
+                                "player_id": 16,
+                                "playerlastname": "Newton",
+                                "playerfirstname": "Cam"
+                            }],
+                            [{
+                                "player_id": 1,
+                                "playerlastname": "Mariota",
+                                "playerfirstname": "Marcus"
+                            },
+                            {
+                                "player_id": 2,
+                                "playerlastname": "Murray",
+                                "playerfirstname": "Demarco"
+                            },
+                            {
+                                "player_id": 3,
+                                "playerlastname": "Henry",
+                                "playerfirstname": "Derrick"
+                            }],
+                            [{
+                                "player_id": 4,
+                                "playerlastname": "Gaskin",
+                                "playerfirstname": "Myles"
+                            },
+                            {
+                                "player_id": 5,
+                                "playerlastname": "Ahmed",
+                                "playerfirstname": "Salvon"
+                            },
+                            {
+                                "player_id": 6,
+                                "playerlastname": "Breida",
+                                "playerfirstname": "Matt"
+                            }],
+                            [{
+                                "player_id": 7,
+                                "playerlastname": "Allen",
+                                "playerfirstname": "Josh"
+                            },
+                            {
+                                "player_id": 8,
+                                "playerlastname": "Beasley",
+                                "playerfirstname": "Cole"
+                            }],
+                            [{
+                                "player_id": 19,
+                                "playerlastname": "Brees",
+                                "playerfirstname": "Drew"
+                            },
+                            {
+                                "player_id": 20,
+                                "playerlastname": "Hill",
+                                "playerfirstname": "Taysom"
+                            },
+                            {
+                                "player_id": 21,
+                                "playerlastname": "Winston",
+                                "playerfirstname": "Jameis"
+                            }]
+                        ]
+                    },
+                    "team_id": {
+                        "type": "integer",
+                        "title": "The team_id Schema",
+                        "description": "Unique identifying number that represents one team",
+                        "examples": [
+                            6,
+                            4,
+                            2,
+                            8,
+                            3,
+                            5,
+                            9,
+                            10,
+                            1,
+                            7
+                        ]
+                    },
+                    "division": {
+                        "type": "string",
+                        "title": "The division Schema",
+                        "description": "Division a team plays in",
+                        "examples": [
+                            "NFC West",
+                            "NFC North",
+                            "AFC South",
+                            "AFC West",
+                            "NFC East",
+                            "NFC South",
+                            "AFC East"
+                        ]
+                    },
+                    "gameswon": {
+                        "type": "integer",
+                        "title": "The gameswon Schema",
+                        "description": "Number of games a team has won in the specified season",
+                        "examples": [
+                            5,
+                            9,
+                            11,
+                            10,
+                            12
+                        ]
+                    },
+                    "teamname": {
+                        "type": "string",
+                        "title": "The teamname Schema",
+                        "description": "Name of the NFL team. Usually consists of a city name followed by their nickname",
+                        "examples": [
+                            "Los Angeles Rams",
+                            "Detroit Lions",
+                            "Houston Texans",
+                            "Denver Broncos",
+                            "Philadelphia Eagles",
+                            "Carolina Panthers",
+                            "Tennessee Titans",
+                            "Miami Dolphins",
+                            "Buffalo Bills",
+                            "New Orleans Saints"
+                        ]
+                    },
+                    "gameslost": {
+                        "type": "integer",
+                        "title": "The gameslost Schema",
+                        "description": "Number of games a team has lost in the specified season",
+                        "examples": [
+                            12,
+                            8,
+                            5,
+                            11,
+                            7,
+                            6,
+                            4
+                        ]
+                    },
+                    "conference": {
+                        "type": "string",
+                        "title": "The conference Schema",
+                        "description": "Conference a team plays in",
+                        "examples": [
+                            "NFC",
+                            "AFC"
+                        ]
+                    },
+                    "pointsdifferential": {
+                        "type": "integer",
+                        "title": "The pointsdifferential Schema",
+                        "description": "Difference between acheived points and lost points",
+                        "examples": [
+                            77,
+                            26,
+                            86,
+                            93,
+                            31,
+                            36,
+                            3,
+                            66,
+                            194,
+                            145
+                        ]
+                    },
+                    "pointsscoredbyteam": {
+                        "type": "integer",
+                        "title": "The pointsscoredbyteam Schema",
+                        "description": "Amount of points a team has achieved in specified season",
+                        "examples": [
+                            307,
+                            453,
+                            402,
+                            289,
+                            385,
+                            363,
+                            381,
+                            404,
+                            483,
+                            482
+                        ]
+                    },
+                    "pointsscoredbyopposition": {
+                        "type": "integer",
+                        "title": "The pointsscoredbyopposition Schema",
+                        "description": "Amount of points other teams have achieved playing against this team in the specified season",
+                        "examples": [
+                            384,
+                            427,
+                            316,
+                            382,
+                            354,
+                            327,
+                            378,
+                            338,
+                            289,
+                            337
+                        ]
+                    }
+                },
+                "examples": [{
+                    "city": "Los Angeles",
+                    "coach": "Sean McVay",
+                    "season": 2022,
+                    "players": [{
+                        "player_id": 17,
+                        "playerlastname": "Stafford",
+                        "playerfirstname": "Matthew"
+                    },
+                    {
+                        "player_id": 18,
+                        "playerlastname": "Mayfield",
+                        "playerfirstname": "Baker"
+                    }],
+                    "team_id": 6,
+                    "division": "NFC West",
+                    "gameswon": 5,
+                    "teamname": "Los Angeles Rams",
+                    "gameslost": 12,
+                    "conference": "NFC",
+                    "pointsdifferential":
+                        77,
+                    "pointsscoredbyteam": 307,
+                    "pointsscoredbyopposition": 384
+                },
+                {
+                    "city": "Detroit",
+                    "coach": "Dan Campbell",
+                    "season": 2022,
+                    "players": [{
+                        "player_id": 13,
+                        "playerlastname": "Goff",
+                        "playerfirstname": "Jared"
+                    },
+                    {
+                        "player_id": 14,
+                        "playerlastname": "Fox",
+                        "playerfirstname": "Jack"
+                    },
+                    {
+                        "player_id": 15,
+                        "playerlastname": "Sudfeld",
+                        "playerfirstname": "Nate"
+                    }],
+                    "team_id": 4,
+                    "division": "NFC North",
+                    "gameswon": 9,
+                    "teamname": "Detroit Lions",
+                    "gameslost": 8,
+                    "conference": "NFC",
+                    "pointsdifferential": 26,
+                    "pointsscoredbyteam": 453,
+                    "pointsscoredbyopposition": 427
+                },
+                {
+                    "city": "Houston",
+                    "coach": "Bill O Brien",
+                    "season": 2018,
+                    "players": [{
+                        "player_id": 9,
+                        "playerlastname": "Watson",
+                        "playerfirstname": "Deshaun"
+                    },
+                    {
+                        "player_id": 10,
+                        "playerlastname": "Hopkins",
+                        "playerfirstname": "DeAndre"
+                    }],
+                    "team_id": 2,
+                    "division": "AFC South",
+                    "gameswon": 11,
+                    "teamname": "Houston Texans",
+                    "gameslost": 5,
+                    "conference": "AFC",
+                    "pointsdifferential": 86,
+                    "pointsscoredbyteam": 402,
+                    "pointsscoredbyopposition": 316
+                },
+                {
+                    "city": "Denver",
+                    "coach": "Vance Joseph",
+                    "season": 2017,
+                    "players": [{
+                        "player_id": 22,
+                        "playerlastname": "Lynch",
+                        "playerfirstname": "Paxton"
+                    }],
+                    "team_id": 8,
+                    "division": "AFC West",
+                    "gameswon": 5,
+                    "teamname": "Denver Broncos",
+                    "gameslost": 11,
+                    "conference": "AFC",
+                    "pointsdifferential":
+                        93,
+                    "pointsscoredbyteam": 289,
+                    "pointsscoredbyopposition": 382
+                },
+                {
+                    "city": "Philadelphia",
+                    "coach": "Doug Pederson",
+                    "season": 2019,
+                    "players": [{
+                        "player_id": 11,
+                        "playerlastname": "Wentz",
+                        "playerfirstname": "Carson"
+                    },
+                    {
+                        "player_id": 12,
+                        "playerlastname": "Elliot",
+                        "playerfirstname": "Jake"
+                    }],
+                    "team_id": 3,
+                    "division": "NFC East",
+                    "gameswon": 9,
+                    "teamname": "Philadelphia Eagles",
+                    "gameslost": 7,
+                    "conference": "NFC",
+                    "pointsdifferential": 31,
+                    "pointsscoredbyteam": 385,
+                    "pointsscoredbyopposition": 354
+                },
+                {
+                    "city": "Carolina",
+                    "coach": "Ron Rivera",
+                    "season": 2017,
+                    "players": [{
+                        "player_id": 16,
+                        "playerlastname": "Newton",
+                        "playerfirstname": "Cam"
+                    }],
+                    "team_id": 5,
+                    "division": "NFC South",
+                    "gameswon": 11,
+                    "teamname": "Carolina Panthers",
+                    "gameslost": 5,
+                    "conference": "NFC",
+                    "pointsdifferential": 36,
+                    "pointsscoredbyteam": 363,
+                    "pointsscoredbyopposition": 327
+                },
+                {
+                    "city": "Tennessee",
+                    "coach": "Mike Mularkey",
+                    "season": 2016,
+                    "players": [{
+                        "player_id": 1,
+                        "playerlastname": "Mariota",
+                        "playerfirstname": "Marcus"
+                    },
+                    {
+                        "player_id": 2,
+                        "playerlastname": "Murray",
+                        "playerfirstname": "Demarco"
+                    },
+                    {
+                        "player_id": 3,
+                        "playerlastname": "Henry",
+                        "playerfirstname": "Derrick"
+                    }],
+                    "team_id": 9,
+                    "division": "AFC South",
+                    "gameswon": 9,
+                    "teamname": "Tennessee Titans",
+                    "gameslost": 7,
+                    "conference": "AFC",
+                    "pointsdifferential": 3,
+                    "pointsscoredbyteam": 381,
+                    "pointsscoredbyopposition": 378
+                },
+                {
+                    "city": "Miami",
+                    "coach": "Brian Flores",
+                    "season": 2020,
+                    "players": [{
+                        "player_id": 4,
+                        "playerlastname": "Gaskin",
+                        "playerfirstname": "Myles"
+                    },
+                    {
+                        "player_id": 5,
+                        "playerlastname": "Ahmed",
+                        "playerfirstname": "Salvon"
+                    },
+                    {
+                        "player_id": 6,
+                        "playerlastname": "Breida",
+                        "playerfirstname": "Matt"
+                    }],
+                    "team_id": 10,
+                    "division": "AFC East",
+                    "gameswon": 10,
+                    "teamname": "Miami Dolphins",
+                    "gameslost": 6,
+                    "conference": "AFC",
+                    "pointsdifferential": 66,
+                    "pointsscoredbyteam": 404,
+                    "pointsscoredbyopposition": 338
+                },
+                {
+                    "city": "Buffalo",
+                    "coach": "Sean McDermott",
+                    "season": 2021,
+                    "players": [{
+                        "player_id": 7,
+                        "playerlastname": "Allen",
+                        "playerfirstname": "Josh"
+                    },
+                    {
+                        "player_id": 8,
+                        "playerlastname": "Beasley",
+                        "playerfirstname": "Cole"
+                    }],
+                    "team_id": 1,
+                    "division": "AFC East",
+                    "gameswon": 11,
+                    "teamname": "Buffalo Bills",
+                    "gameslost": 6,
+                    "conference": "AFC",
+                    "pointsdifferential": 194,
+                    "pointsscoredbyteam": 483,
+                    "pointsscoredbyopposition": 289
+                },
+                {
+                    "city": "New Orleans",
+                    "coach": "Sean Payton",
+                    "season": 2020,
+                    "players": [{
+                        "player_id": 19,
+                        "playerlastname": "Brees",
+                        "playerfirstname": "Drew"
+                    },
+                    {
+                        "player_id": 20,
+                        "playerlastname": "Hill",
+                        "playerfirstname": "Taysom"
+                    },
+                    {
+                        "player_id": 21,
+                        "playerlastname": "Winston",
+                        "playerfirstname": "Jameis"
+                    }],
+                    "team_id": 7,
+                    "division": "NFC South",
+                    "gameswon": 12,
+                    "teamname": "New Orleans Saints",
+                    "gameslost": 4,
+                    "conference": "NFC",
+                    "pointsdifferential": 145,
+                    "pointsscoredbyteam": 482,
+                    "pointsscoredbyopposition": 337
+                }]
+            },
+            "examples": [
+                [{
+                    "city": "Los Angeles",
+                    "coach": "Sean McVay",
+                    "season": 2022,
+                    "players": [{
+                        "player_id": 17,
+                        "playerlastname": "Stafford",
+                        "playerfirstname": "Matthew"
+                    },
+                    {
+                        "player_id": 18,
+                        "playerlastname": "Mayfield",
+                        "playerfirstname": "Baker"
+                    }],
+                    "team_id": 6,
+                    "division": "NFC West",
+                    "gameswon": 5,
+                    "teamname": "Los Angeles Rams",
+                    "gameslost": 12,
+                    "conference": "NFC",
+                    "pointsdifferential":
+                        77,
+                    "pointsscoredbyteam": 307,
+                    "pointsscoredbyopposition": 384
+                },
+                {
+                    "city": "Detroit",
+                    "coach": "Dan Campbell",
+                    "season": 2022,
+                    "players": [{
+                        "player_id": 13,
+                        "playerlastname": "Goff",
+                        "playerfirstname": "Jared"
+                    },
+                    {
+                        "player_id": 14,
+                        "playerlastname": "Fox",
+                        "playerfirstname": "Jack"
+                    },
+                    {
+                        "player_id": 15,
+                        "playerlastname": "Sudfeld",
+                        "playerfirstname": "Nate"
+                    }],
+                    "team_id": 4,
+                    "division": "NFC North",
+                    "gameswon": 9,
+                    "teamname": "Detroit Lions",
+                    "gameslost": 8,
+                    "conference": "NFC",
+                    "pointsdifferential": 26,
+                    "pointsscoredbyteam": 453,
+                    "pointsscoredbyopposition": 427
+                },
+                {
+                    "city": "Houston",
+                    "coach": "Bill O Brien",
+                    "season": 2018,
+                    "players": [{
+                        "player_id": 9,
+                        "playerlastname": "Watson",
+                        "playerfirstname": "Deshaun"
+                    },
+                    {
+                        "player_id": 10,
+                        "playerlastname": "Hopkins",
+                        "playerfirstname": "DeAndre"
+                    }],
+                    "team_id": 2,
+                    "division": "AFC South",
+                    "gameswon": 11,
+                    "teamname": "Houston Texans",
+                    "gameslost": 5,
+                    "conference": "AFC",
+                    "pointsdifferential": 86,
+                    "pointsscoredbyteam": 402,
+                    "pointsscoredbyopposition": 316
+                },
+                {
+                    "city": "Denver",
+                    "coach": "Vance Joseph",
+                    "season": 2017,
+                    "players": [{
+                        "player_id": 22,
+                        "playerlastname": "Lynch",
+                        "playerfirstname": "Paxton"
+                    }],
+                    "team_id": 8,
+                    "division": "AFC West",
+                    "gameswon": 5,
+                    "teamname": "Denver Broncos",
+                    "gameslost": 11,
+                    "conference": "AFC",
+                    "pointsdifferential":
+                        93,
+                    "pointsscoredbyteam": 289,
+                    "pointsscoredbyopposition": 382
+                },
+                {
+                    "city": "Philadelphia",
+                    "coach": "Doug Pederson",
+                    "season": 2019,
+                    "players": [{
+                        "player_id": 11,
+                        "playerlastname": "Wentz",
+                        "playerfirstname": "Carson"
+                    },
+                    {
+                        "player_id": 12,
+                        "playerlastname": "Elliot",
+                        "playerfirstname": "Jake"
+                    }],
+                    "team_id": 3,
+                    "division": "NFC East",
+                    "gameswon": 9,
+                    "teamname": "Philadelphia Eagles",
+                    "gameslost": 7,
+                    "conference": "NFC",
+                    "pointsdifferential": 31,
+                    "pointsscoredbyteam": 385,
+                    "pointsscoredbyopposition": 354
+                },
+                {
+                    "city": "Carolina",
+                    "coach": "Ron Rivera",
+                    "season": 2017,
+                    "players": [{
+                        "player_id": 16,
+                        "playerlastname": "Newton",
+                        "playerfirstname": "Cam"
+                    }],
+                    "team_id": 5,
+                    "division": "NFC South",
+                    "gameswon": 11,
+                    "teamname": "Carolina Panthers",
+                    "gameslost": 5,
+                    "conference": "NFC",
+                    "pointsdifferential": 36,
+                    "pointsscoredbyteam": 363,
+                    "pointsscoredbyopposition": 327
+                },
+                {
+                    "city": "Tennessee",
+                    "coach": "Mike Mularkey",
+                    "season": 2016,
+                    "players": [{
+                        "player_id": 1,
+                        "playerlastname": "Mariota",
+                        "playerfirstname": "Marcus"
+                    },
+                    {
+                        "player_id": 2,
+                        "playerlastname": "Murray",
+                        "playerfirstname": "Demarco"
+                    },
+                    {
+                        "player_id": 3,
+                        "playerlastname": "Henry",
+                        "playerfirstname": "Derrick"
+                    }],
+                    "team_id": 9,
+                    "division": "AFC South",
+                    "gameswon": 9,
+                    "teamname": "Tennessee Titans",
+                    "gameslost": 7,
+                    "conference": "AFC",
+                    "pointsdifferential": 3,
+                    "pointsscoredbyteam": 381,
+                    "pointsscoredbyopposition": 378
+                },
+                {
+                    "city": "Miami",
+                    "coach": "Brian Flores",
+                    "season": 2020,
+                    "players": [{
+                        "player_id": 4,
+                        "playerlastname": "Gaskin",
+                        "playerfirstname": "Myles"
+                    },
+                    {
+                        "player_id": 5,
+                        "playerlastname": "Ahmed",
+                        "playerfirstname": "Salvon"
+                    },
+                    {
+                        "player_id": 6,
+                        "playerlastname": "Breida",
+                        "playerfirstname": "Matt"
+                    }],
+                    "team_id": 10,
+                    "division": "AFC East",
+                    "gameswon": 10,
+                    "teamname": "Miami Dolphins",
+                    "gameslost": 6,
+                    "conference": "AFC",
+                    "pointsdifferential": 66,
+                    "pointsscoredbyteam": 404,
+                    "pointsscoredbyopposition": 338
+                },
+                {
+                    "city": "Buffalo",
+                    "coach": "Sean McDermott",
+                    "season": 2021,
+                    "players": [{
+                        "player_id": 7,
+                        "playerlastname": "Allen",
+                        "playerfirstname": "Josh"
+                    },
+                    {
+                        "player_id": 8,
+                        "playerlastname": "Beasley",
+                        "playerfirstname": "Cole"
+                    }],
+                    "team_id": 1,
+                    "division": "AFC East",
+                    "gameswon": 11,
+                    "teamname": "Buffalo Bills",
+                    "gameslost": 6,
+                    "conference": "AFC",
+                    "pointsdifferential": 194,
+                    "pointsscoredbyteam": 483,
+                    "pointsscoredbyopposition": 289
+                },
+                {
+                    "city": "New Orleans",
+                    "coach": "Sean Payton",
+                    "season": 2020,
+                    "players": [{
+                        "player_id": 19,
+                        "playerlastname": "Brees",
+                        "playerfirstname": "Drew"
+                    },
+                    {
+                        "player_id": 20,
+                        "playerlastname": "Hill",
+                        "playerfirstname": "Taysom"
+                    },
+                    {
+                        "player_id": 21,
+                        "playerlastname": "Winston",
+                        "playerfirstname": "Jameis"
+                    }],
+                    "team_id": 7,
+                    "division": "NFC South",
+                    "gameswon": 12,
+                    "teamname": "New Orleans Saints",
+                    "gameslost": 4,
+                    "conference": "NFC",
+                    "pointsdifferential": 145,
+                    "pointsscoredbyteam": 482,
+                    "pointsscoredbyopposition": 337
+                }]
+            ]
+        }
+    },
+    "examples": [{
+        "NFLteamsSeasons": [{
+            "city": "Los Angeles",
+            "coach": "Sean McVay",
+            "season": 2022,
+            "players": [{
+                "player_id": 17,
+                "playerlastname": "Stafford",
+                "playerfirstname": "Matthew"
+            },
+            {
+                "player_id": 18,
+                "playerlastname": "Mayfield",
+                "playerfirstname": "Baker"
+            }],
+            "team_id": 6,
+            "division": "NFC West",
+            "gameswon": 5,
+            "teamname": "Los Angeles Rams",
+            "gameslost": 12,
+            "conference": "NFC",
+            "pointsdifferential":
+                77,
+            "pointsscoredbyteam": 307,
+            "pointsscoredbyopposition": 384
+        },
+        {
+            "city": "Detroit",
+            "coach": "Dan Campbell",
+            "season": 2022,
+            "players": [{
+                "player_id": 13,
+                "playerlastname": "Goff",
+                "playerfirstname": "Jared"
+            },
+            {
+                "player_id": 14,
+                "playerlastname": "Fox",
+                "playerfirstname": "Jack"
+            },
+            {
+                "player_id": 15,
+                "playerlastname": "Sudfeld",
+                "playerfirstname": "Nate"
+            }],
+            "team_id": 4,
+            "division": "NFC North",
+            "gameswon": 9,
+            "teamname": "Detroit Lions",
+            "gameslost": 8,
+            "conference": "NFC",
+            "pointsdifferential": 26,
+            "pointsscoredbyteam": 453,
+            "pointsscoredbyopposition": 427
+        },
+        {
+            "city": "Houston",
+            "coach": "Bill O Brien",
+            "season": 2018,
+            "players": [{
+                "player_id": 9,
+                "playerlastname": "Watson",
+                "playerfirstname": "Deshaun"
+            },
+            {
+                "player_id": 10,
+                "playerlastname": "Hopkins",
+                "playerfirstname": "DeAndre"
+            }],
+            "team_id": 2,
+            "division": "AFC South",
+            "gameswon": 11,
+            "teamname": "Houston Texans",
+            "gameslost": 5,
+            "conference": "AFC",
+            "pointsdifferential": 86,
+            "pointsscoredbyteam": 402,
+            "pointsscoredbyopposition": 316
+        },
+        {
+            "city": "Denver",
+            "coach": "Vance Joseph",
+            "season": 2017,
+            "players": [{
+                "player_id": 22,
+                "playerlastname": "Lynch",
+                "playerfirstname": "Paxton"
+            }],
+            "team_id": 8,
+            "division": "AFC West",
+            "gameswon": 5,
+            "teamname": "Denver Broncos",
+            "gameslost": 11,
+            "conference": "AFC",
+            "pointsdifferential":
+                93,
+            "pointsscoredbyteam": 289,
+            "pointsscoredbyopposition": 382
+        },
+        {
+            "city": "Philadelphia",
+            "coach": "Doug Pederson",
+            "season": 2019,
+            "players": [{
+                "player_id": 11,
+                "playerlastname": "Wentz",
+                "playerfirstname": "Carson"
+            },
+            {
+                "player_id": 12,
+                "playerlastname": "Elliot",
+                "playerfirstname": "Jake"
+            }],
+            "team_id": 3,
+            "division": "NFC East",
+            "gameswon": 9,
+            "teamname": "Philadelphia Eagles",
+            "gameslost": 7,
+            "conference": "NFC",
+            "pointsdifferential": 31,
+            "pointsscoredbyteam": 385,
+            "pointsscoredbyopposition": 354
+        },
+        {
+            "city": "Carolina",
+            "coach": "Ron Rivera",
+            "season": 2017,
+            "players": [{
+                "player_id": 16,
+                "playerlastname": "Newton",
+                "playerfirstname": "Cam"
+            }],
+            "team_id": 5,
+            "division": "NFC South",
+            "gameswon": 11,
+            "teamname": "Carolina Panthers",
+            "gameslost": 5,
+            "conference": "NFC",
+            "pointsdifferential": 36,
+            "pointsscoredbyteam": 363,
+            "pointsscoredbyopposition": 327
+        },
+        {
+            "city": "Tennessee",
+            "coach": "Mike Mularkey",
+            "season": 2016,
+            "players": [{
+                "player_id": 1,
+                "playerlastname": "Mariota",
+                "playerfirstname": "Marcus"
+            },
+            {
+                "player_id": 2,
+                "playerlastname": "Murray",
+                "playerfirstname": "Demarco"
+            },
+            {
+                "player_id": 3,
+                "playerlastname": "Henry",
+                "playerfirstname": "Derrick"
+            }],
+            "team_id": 9,
+            "division": "AFC South",
+            "gameswon": 9,
+            "teamname": "Tennessee Titans",
+            "gameslost": 7,
+            "conference": "AFC",
+            "pointsdifferential": 3,
+            "pointsscoredbyteam": 381,
+            "pointsscoredbyopposition": 378
+        },
+        {
+            "city": "Miami",
+            "coach": "Brian Flores",
+            "season": 2020,
+            "players": [{
+                "player_id": 4,
+                "playerlastname": "Gaskin",
+                "playerfirstname": "Myles"
+            },
+            {
+                "player_id": 5,
+                "playerlastname": "Ahmed",
+                "playerfirstname": "Salvon"
+            },
+            {
+                "player_id": 6,
+                "playerlastname": "Breida",
+                "playerfirstname": "Matt"
+            }],
+            "team_id": 10,
+            "division": "AFC East",
+            "gameswon": 10,
+            "teamname": "Miami Dolphins",
+            "gameslost": 6,
+            "conference": "AFC",
+            "pointsdifferential": 66,
+            "pointsscoredbyteam": 404,
+            "pointsscoredbyopposition": 338
+        },
+        {
+            "city": "Buffalo",
+            "coach": "Sean McDermott",
+            "season": 2021,
+            "players": [{
+                "player_id": 7,
+                "playerlastname": "Allen",
+                "playerfirstname": "Josh"
+            },
+            {
+                "player_id": 8,
+                "playerlastname": "Beasley",
+                "playerfirstname": "Cole"
+            }],
+            "team_id": 1,
+            "division": "AFC East",
+            "gameswon": 11,
+            "teamname": "Buffalo Bills",
+            "gameslost": 6,
+            "conference": "AFC",
+            "pointsdifferential": 194,
+            "pointsscoredbyteam": 483,
+            "pointsscoredbyopposition": 289
+        },
+        {
+            "city": "New Orleans",
+            "coach": "Sean Payton",
+            "season": 2020,
+            "players": [{
+                "player_id": 19,
+                "playerlastname": "Brees",
+                "playerfirstname": "Drew"
+            },
+            {
+                "player_id": 20,
+                "playerlastname": "Hill",
+                "playerfirstname": "Taysom"
+            },
+            {
+                "player_id": 21,
+                "playerlastname": "Winston",
+                "playerfirstname": "Jameis"
+            }],
+            "team_id": 7,
+            "division": "NFC South",
+            "gameswon": 12,
+            "teamname": "New Orleans Saints",
+            "gameslost": 4,
+            "conference": "NFC",
+            "pointsdifferential": 145,
+            "pointsscoredbyteam": 482,
+            "pointsscoredbyopposition": 337
+        }]
+    }]
+}
