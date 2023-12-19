@@ -17,8 +17,8 @@ const pool = new Pool({
     port: 5432,
 });
 
+
 app.get('/datatable', (req, res) => {
-    console.log("Ulazak u database.html");
     res.sendFile(path.join(__dirname, "datatable.html"));
 });
 
@@ -171,7 +171,6 @@ async function setJsonResult(attribute, text) {
                 ) TO \'C:\\Users\\Korisnik\\Desktop\\NOVO\\ORlabosNovo\\or-main\\or-main\\result.json\' `;
     
     try {
-        console.log(jsonQuery);
        await pool.query(jsonQuery);
     } catch (error) {
         console.error('Error during JSON generation:', error);
