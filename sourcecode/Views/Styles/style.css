@@ -1,0 +1,71 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+
+body {
+  width: 100%;
+  padding: 0px;
+}
+#tablica {
+  padding: 0px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    font-size: smaller;
+    border-collapse: collapse;
+    width: 20%;
+    margin: 35px auto;
+}
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .forma {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  .select {
+    margin-left: 10px;
+  }
+
+  .dvid {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .keyword {
+    margin-left: 10px;
+  }
+
+  .search-button {
+    margin-top: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  a {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  
